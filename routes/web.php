@@ -13,6 +13,16 @@ Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
 
+Route::view('kelas', 'kelas')
+    ->middleware(['auth', 'verified'])
+    ->name('kelas');
+
+    Route::view('spp', 'spp')
+    ->middleware(['auth', 'verified'])
+    ->name('spp');
+
+
+
 Route::middleware(['auth'])->group(function () {
     Route::redirect('settings', 'settings/profile');
 
@@ -21,4 +31,4 @@ Route::middleware(['auth'])->group(function () {
     Route::get('settings/appearance', Appearance::class)->name('settings.appearance');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
